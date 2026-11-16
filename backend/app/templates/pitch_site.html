@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ idea.name }} — Pitch Presentation</title>
+  <style>
+    /* -------------------------------------------------------------
+       VentureLens Standalone Embedded CSS
+       100% Offline Capable &bull; Zero External CDN / Font Dependencies
+       ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background-color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 4.5rem 2rem 4rem;
+      text-align: center;
+      border-bottom: 3px solid #3b82f6;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    .hero-tagline {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: #94a3b8;
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+    }
+    .hero-headline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      background: rgba(15, 23, 42, 0.6);
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+    .section {
+      margin-bottom: 3.5rem;
+    }
+    h2 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    p {
+      font-size: 1.05rem;
+      color: #334155;
+      margin-bottom: 1rem;
+    }
+    .lead-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 5px solid #3b82f6;
+      border-radius: 0.75rem;
+      padding: 1.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      margin-top: 1rem;
+    }
+    .lead-card.problem-card {
+      border-left-color: #ef4444;
+      background: #fffafa;
+    }
+    .lead-card.solution-card {
+      border-left-color: #10b981;
+      background: #f7fee7;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      padding: 1.75rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+    }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      list-style: none;
+    }
+    .pill {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .mvp-list {
+      margin-left: 1.25rem;
+      margin-top: 0.75rem;
+    }
+    .mvp-list li {
+      margin-bottom: 0.5rem;
+      color: #334155;
+      font-size: 1.05rem;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #ffffff;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+      margin-top: 4rem;
+    }
+    .cta-banner h3 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    .cta-banner p {
+      color: #dbeafe;
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 auto 1.75rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #1d4ed8;
+      padding: 0.85rem 2.25rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .btn:hover {
+      background: #f8fafc;
+    }
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      max-width: 700px;
+      margin: 0.75rem auto 0;
+      line-height: 1.4;
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 2.25rem; }
+      .hero-tagline { font-size: 1.1rem; }
+      header { padding: 3rem 1.25rem; }
+      .container { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO HEADER -->
+  <header>
+    <div class="badge">Venture Pitch Presentation</div>
+    <h1>{{ idea.name }}</h1>
+    <p class="hero-tagline">{{ pitch.tagline }}</p>
+    <div class="hero-headline">{{ pitch.headline }}</div>
+  </header>
+
+  <!-- MAIN PRESENTATION BODY -->
+  <main class="container">
+
+    <!-- THE PROBLEM -->
+    <section class="section">
+      <h2>The Problem</h2>
+      <div class="lead-card problem-card">
+        <p>{{ pitch.problem_statement }}</p>
+      </div>
+    </section>
+
+    <!-- OUR SOLUTION -->
+    <section class="section">
+      <h2>Our Solution</h2>
+      <div class="lead-card solution-card">
+        <p>{{ pitch.solution_overview }}</p>
+      </div>
+    </section>
+
+    <!-- CORE VALUE DRIVERS & FEATURES -->
+    <section class="section">
+      <h2>Core Value Drivers</h2>
+      <div class="grid">
+        {% for feat in pitch.key_features %}
+        <div class="card">
+          <div class="card-title">{{ feat.title }}</div>
+          <p>{{ feat.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- TARGET AUDIENCES -->
+    <section class="section">
+      <h2>Target Audiences</h2>
+      <p>Specifically engineered to create high-leverage outcomes for:</p>
+      <ul class="pill-list">
+        {% for aud in pitch.target_audiences %}
+        <li class="pill">{{ aud }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <!-- BUSINESS & COMMERCIAL MODEL -->
+    <section class="section">
+      <h2>Business & Monetization Model</h2>
+      <div class="lead-card">
+        <p>{{ pitch.business_model }}</p>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <div class="cta-banner">
+      <h3>Ready to experience {{ idea.name }}?</h3>
+      <p>Discover how our focused MVP solves your primary pain point with zero onboarding friction.</p>
+      <a href="#contact" class="btn">{{ pitch.call_to_action }}</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER & DISCLAIMER -->
+  <footer>
+    <p>Compiled by <strong>VentureLens AI Virtual Boardroom</strong> &bull; Standalone Offline Presentation Deliverable</p>
+    <p class="disclaimer">Evaluation Deliverable: This pitch presentation was automatically generated from structured multi-agent boardroom analysis for demonstration purposes only. It does not constitute formal financial, legal, or investment advice.</p>
+  </footer>
+
+</body>
+</html>
